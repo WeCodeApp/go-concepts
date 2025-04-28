@@ -1,0 +1,16 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	defer fmt.Println("Defered function executed")
+
+	fmt.Println("Main function executed")
+
+	os.Exit(1)
+
+	fmt.Println("End of main function") // This line will not be executed
+}

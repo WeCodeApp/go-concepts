@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func main() {
+	var ptr *int
+	var a = 10
+	ptr = &a
+
+	modifyValue(ptr)
+
+	fmt.Println("Value of a:", a)
+	fmt.Println("Integer pointer", ptr)
+	fmt.Println("Derefence:", *ptr)
+	fmt.Println("Address of where the pointer points", &a)
+	if ptr == nil {
+		fmt.Println("Pointer is nil")
+	}
+}
+
+func modifyValue(ptr *int) {
+	*ptr++
+}

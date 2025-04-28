@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func init() {
+	fmt.Println("Initializaing package1")
+}
+
+func main() {
+	fmt.Println("Inside main func")
+}
+
+func init() {
+	fmt.Println("Initializaing package2")
+}
+
+func init() {
+	fmt.Println("Initializaing package3")
+}

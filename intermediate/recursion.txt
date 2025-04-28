@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Factorial of 5 is", factorial(5))
+
+	// 10 = 1 + 1= 1
+	fmt.Println(sumOfDigits(9))
+	fmt.Println(sumOfDigits(12))
+	fmt.Println(sumOfDigits(12345))
+
+}
+
+func sumOfDigits(n int) int {
+	// Base case
+	if n < 10 {
+		return n
+	}
+
+	// Recursive case
+	return n%10 + sumOfDigits(n/10)
+}
+
+func factorial(n int) int {
+	//Base case: factorial of 0 is 1
+	if n == 0 {
+		return 1
+	}
+	// Recursive case: factorial of n is n * factorial(n-1)
+	return n * factorial(n-1)
+}
+
+//1st iteration
+// 5 * factorial(5-1)
+// 5 * 4 * factorial(4-1)

@@ -1,0 +1,35 @@
+package main
+
+import "fmt"
+
+type Shape struct {
+	Rectangle
+}
+
+type Rectangle struct {
+	length float64
+	width  float64
+}
+
+// Method with value receiver
+func (r Rectangle) Area() float64 {
+	return r.length * r.width
+}
+
+// Method with pointer receiver
+func (r *Rectangle) Scale(factor float64) {
+	r.length *= factor
+	r.width *= factor
+}
+
+func main() {
+	s := Shape{
+		Rectangle: Rectangle{
+			length: 10,
+			width:  5,
+		},
+	}
+
+	fmt.Printf("Area of shape rectangle is %v\n", s.Area())
+	fmt.Printf("Area of shape rectangle is %v\n", s.Rectangle.Area())
+}

@@ -1,0 +1,53 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+
+	//Convert strings to numbers
+	numStr := "12345"
+	num, err := strconv.Atoi(numStr)
+	if err != nil {
+		fmt.Println("Error converting string to int:", err)
+	}
+	fmt.Println("Parsed Integer", num)
+	fmt.Println("Parsed Integer + 1", num+1)
+
+	numStr1, err := strconv.ParseInt(numStr, 10, 32)
+	if err != nil {
+		fmt.Println("Error converting string to int:", err)
+	}
+	fmt.Println("Parsed Integer", numStr1)
+
+	floatStr := "3.14"
+	floatval, err := strconv.ParseFloat(floatStr, 64)
+	if err != nil {
+		fmt.Println("Error converting string to float:", err)
+	}
+	fmt.Println("Parsed Float", floatval)
+
+	binaryStr := "1010"
+	decimal, err := strconv.ParseInt(binaryStr, 2, 64)
+	if err != nil {
+		fmt.Println("Error converting string to int:", err)
+	}
+	fmt.Println("Parsed Binary", decimal)
+
+	hexStr := "FF"
+	hex, err := strconv.ParseInt(hexStr, 16, 64)
+	if err != nil {
+		fmt.Println("Error converting string to int:", err)
+	}
+	fmt.Println("Parsed Hexadecimal", hex)
+
+	invalidNum := "456abc"
+	invalidParse, err := strconv.Atoi(invalidNum)
+	if err != nil {
+		fmt.Println("Error converting string to int:", err)
+		return
+	}
+	fmt.Println("Parsed Invalid number", invalidParse)
+}
